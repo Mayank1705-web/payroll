@@ -1,0 +1,5 @@
+employee_id,name,monthly_salary,working_days,present_days,bonus
+E101,Rahul,60000,22,20,5000
+E102,Priya,80000,22,22,10000
+E103,Amit,45000,22,18,2000
+E104,Neha,70000,22,21,3000
