@@ -1,16 +1,25 @@
-#Automated Payroll Processing System
-1. Install required packages:
-   pip install -r requirements.txt 
-2. Start the server from the root directory:
+Automated Payroll Processing System
+Install required packages:
+   pip install -r requirements.txt
+
+Start the server from the root directory:
    uvicorn app.main:app --reload
-3. Access interactive API documentation:
-   http://127.0.0.1:8000/docs
-#API Endpoints
-POST/payroll/upload - Upload Payroll
+
+Access interactive API documentation:
+
+http://127.0.0.1:8000/docs
+
+API Endpoints
+POST /payroll/upload - Upload Payroll
+
 Request URL: http://127.0.0.1:8000/payroll/upload
+
 Server response:
-Code	Details: 202	
-Response body
+
+Code: 202
+
+Response body:
+
 {
   "message": "Payroll file accepted for processing",
   "job_id": 1,
@@ -18,11 +27,16 @@ Response body
   "total_rows": 4
 }
 
-GET/payroll/jobs/{job_id} - Get Job Status
+GET /payroll/jobs/{job_id} - Get Job Status
+
 Request URL: http://127.0.0.1:8000/payroll/jobs/1
+
 Server response:
-Code	Details: 200	
-Response body
+
+Code: 200
+
+Response body:
+
 {
   "job_id": 1,
   "payroll_month": "2026-10",
@@ -33,11 +47,17 @@ Response body
   "failed_count": 0,
   "error_summary": null
 }
-GET/payroll/jobs/{job_id}/results - Get Job Results
+
+GET /payroll/jobs/{job_id}/results - Get Job Results
+
 Request URL: http://127.0.0.1:8000/payroll/jobs/1/results
+
 Server response:
-Code	Details: 200	
-Response body
+
+Code: 200
+
+Response body:
+
 {
   "job_id": 1,
   "status": "COMPLETED",
@@ -89,15 +109,23 @@ Response body
   ],
   "errors": []
 }
-GET/payroll/jobs/{job_id}/download - Download Payroll
+
+GET /payroll/jobs/{job_id}/download - Download Payroll
+
 Request URL: http://127.0.0.1:8000/payroll/jobs/1/download
+
 Server response:
-Code	Details: 200	
+
+Code: 200
+
 Response body:
+
 Download file
+
 Response headers:
- content-disposition: attachment; filename="payroll_1.csv" 
- content-type: text/csv; charset=utf-8 
- date: Sat,10 Oct 2026 07:59:37 GMT 
- server: uvicorn 
- transfer-encoding: chunked 
+
+content-disposition: attachment; filename="payroll_1.csv"
+content-type: text/csv; charset=utf-8
+date: Sat, 10 Oct 2026 07:59:37 GMT
+server: uvicorn
+transfer-encoding: chunked
